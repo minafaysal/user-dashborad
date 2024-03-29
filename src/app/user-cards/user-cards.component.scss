@@ -9,7 +9,7 @@
 .user-card {
   width: 200px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -17,10 +17,11 @@
 
 .user-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .user-card img {
-width: 100%;
+  width: 100%;
   border-radius: 9%;
   margin-bottom: 10px;
   min-height: 200px;
@@ -41,4 +42,18 @@ width: 100%;
   font-size: 14px;
   color: #666;
   text-align: initial;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-top: 150px;
+  width: 100%;
+  i {
+    font-size: 50px;
+    font-weight: 900;
+    color: #333;
+  }
 }
