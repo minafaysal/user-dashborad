@@ -15,7 +15,6 @@ export class UserDetailsComponent extends ComponentBase implements OnInit {
   userId: number | null = null;
   isLoading: boolean = true;
   userDetails: USERDETAILS | undefined;
-  // userDetails: { email: ''; first_name: ''; last_name: ''; avatar: '' };
 
   constructor(
     private route: ActivatedRoute,

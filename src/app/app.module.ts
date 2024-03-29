@@ -14,14 +14,21 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
-  declarations: [AppComponent, UserCardsComponent, UserDetailsComponent, NotFoundComponent],
+  declarations: [
+    AppComponent,
+    UserCardsComponent,
+    UserDetailsComponent,
+    NotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+    }),
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],
