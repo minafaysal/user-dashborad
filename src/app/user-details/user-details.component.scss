@@ -1,0 +1,28 @@
+h2 {
+  margin: 50px;
+}
+
+.details-cotainer {
+  margin-inline: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+img {
+  margin-inline: 50px;
+  width: 250px;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-top: 150px;
+  width: 100%;
+  i {
+    font-size: 50px;
+    font-weight: 900;
+    color: #333;
+  }
+}

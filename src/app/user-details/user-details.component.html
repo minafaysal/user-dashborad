@@ -1,1 +1,28 @@
-<p>user-details works!</p>
+<div *ngIf="isLoading" class="spinner">
+  <i class="fas fa-spinner fa-spin"></i>
+</div>
+
+<div class="user-card" *ngIf="!isLoading">
+  <h2>User Details</h2>
+  <div class="details-cotainer">
+    <img
+      [src]="
+        userDetails.data.avatar
+          ? userDetails.data.avatar
+          : '../../assets/img/img_avatar.png'
+      "
+      alt="User Avatar"
+    />
+    <div class="user-info">
+      <h3>
+        {{ userDetails.data.first_name }} {{ userDetails.data.last_name }}
+      </h3>
+      <ul>
+        <li>ID: {{ userDetails.data.id }}</li>
+        <li>First Name: {{ userDetails.data.first_name }}</li>
+        <li>Last Name: {{ userDetails.data.last_name }}</li>
+        <li>Email: {{ userDetails.data.email }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

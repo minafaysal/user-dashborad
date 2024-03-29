@@ -12,7 +12,7 @@ export interface ApiResponse {
   total: number;
   total_pages: number;
   data: User[];
-  support: {
+  support?: {
     url: string;
     text: string;
   };

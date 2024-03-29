@@ -4,6 +4,7 @@ import { ApiService } from '../shared/service/api.service';
 import { User } from '../shared/models/common.models';
 import { ComponentBase } from '../shared/base/common.base';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-cards',
@@ -13,7 +14,11 @@ import { ToastrService } from 'ngx-toastr';
 export class UserCardsComponent extends ComponentBase implements OnInit {
   userList: User[] = [];
   isLoading: boolean = true;
-  constructor(private apiService: ApiService, private toastr: ToastrService) {
+  constructor(
+    private apiService: ApiService,
+    private toastr: ToastrService,
+    private router: Router
+  ) {
     super();
   }
 
@@ -25,7 +30,7 @@ export class UserCardsComponent extends ComponentBase implements OnInit {
         (res) => {
           this.userList = res.data;
           this.isLoading = false;
-          // this.toastr.success('API call successful!', 'Success');
+          this.toastr.success('API call successful!', 'Success');
         },
         (error) => {
           console.error('API call error:', error);
@@ -33,5 +38,9 @@ export class UserCardsComponent extends ComponentBase implements OnInit {
           this.isLoading = false;
         }
       );
+  }
+
+  goToUserDetails(userId: number): void {
+    this.router.navigate(['/user-details', userId]);
   }
 }
