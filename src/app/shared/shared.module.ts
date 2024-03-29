@@ -5,11 +5,11 @@ import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
-  declarations: [
-    HeaderComponent
+  declarations: [HeaderComponent],
+  imports: [CommonModule],
+  exports: [
+    HeaderComponent,
+    CommonModule,
   ],
-  imports: [
-    CommonModule
-  ]
 })
-export class SharedModule { }
+export class SharedModule {}
