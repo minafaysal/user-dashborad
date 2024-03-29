@@ -25,7 +25,7 @@ export class UserCardsComponent extends ComponentBase implements OnInit {
         (res) => {
           this.userList = res.data;
           this.isLoading = false;
-          this.toastr.success('API call successful!', 'Success');
+          // this.toastr.success('API call successful!', 'Success');
         },
         (error) => {
           console.error('API call error:', error);

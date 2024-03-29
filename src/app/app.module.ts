@@ -9,10 +9,12 @@ import { ApiService } from './shared/service/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
-  declarations: [AppComponent, UserCardsComponent],
+  declarations: [AppComponent, UserCardsComponent, UserDetailsComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
