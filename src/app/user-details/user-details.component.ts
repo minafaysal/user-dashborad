@@ -4,7 +4,7 @@ import { takeUntil } from 'rxjs';
 import { ComponentBase } from '../shared/base/common.base';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../shared/service/api.service';
-import { User } from '../shared/models/common.models';
+import { USERDETAILS} from '../shared/models/common.models';
 
 @Component({
   selector: 'app-user-details',
@@ -14,7 +14,7 @@ import { User } from '../shared/models/common.models';
 export class UserDetailsComponent extends ComponentBase implements OnInit {
   userId: number | null = null;
   isLoading: boolean = true;
-  userDetails: any;
+  userDetails: USERDETAILS | undefined;
   // userDetails: { email: ''; first_name: ''; last_name: ''; avatar: '' };
 
   constructor(
@@ -40,8 +40,7 @@ export class UserDetailsComponent extends ComponentBase implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe(
         (res) => {
-          console.log('res:', res.data);
-          this.userDetails = res;
+          this.userDetails = res.data;
           this.isLoading = false;
           this.toastr.success('API call successful!', 'Success');
         },

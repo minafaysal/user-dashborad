@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs';
 import { ApiService } from '../shared/service/api.service';
-import { User } from '../shared/models/common.models';
+import { USER} from '../shared/models/common.models';
 import { ComponentBase } from '../shared/base/common.base';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-cards.component.scss'],
 })
 export class UserCardsComponent extends ComponentBase implements OnInit {
-  userList: User[] = [];
+  userList: USER[] = [];
   isLoading: boolean = true;
   constructor(
     private apiService: ApiService,
