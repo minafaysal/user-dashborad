@@ -2,16 +2,27 @@
   <i class="fas fa-spinner fa-spin"></i>
 </div>
 
-<div *ngIf="!isLoading" class="user-card-list">
-  <div class="user-card" *ngFor="let user of userList">
-    <img [src]="user.avatar" alt="User Avatar" />
+<div *ngIf="!isLoading && userList.length > 0" class="user-card-list">
+  <div
+    class="user-card"
+    *ngFor="let user of userList"
+    (click)="goToUserDetails(user.id)"
+  >
+    <img
+      [src]="user.avatar ? user.avatar : '../../assets/img/img_avatar.png'"
+      alt="User Avatar"
+    />
     <div class="user-info">
       <h3>{{ user.first_name }} {{ user.last_name }}</h3>
       <ul>
-        <li>First Name : {{ user.first_name }}</li>
-        <li>Last Name : {{ user.last_name }}</li>
+        <li>First Name: {{ user.first_name }}</li>
+        <li>Last Name: {{ user.last_name }}</li>
         <li>ID: {{ user.id }}</li>
       </ul>
     </div>
   </div>
+</div>
+
+<div *ngIf="!isLoading && userList.length === 0" class="no-match-text">
+  <p>There is No user have this ID .</p>
 </div>

@@ -14,6 +14,11 @@
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+@media screen and (min-width: 768px) {
+  .user-card {
+    width: 250px;
+  }
+}
 
 .user-card:hover {
   transform: translateY(-5px);
@@ -56,4 +61,12 @@
     font-weight: 900;
     color: #333;
   }
+}
+.no-match-text {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
 }

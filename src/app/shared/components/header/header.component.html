@@ -1,4 +1,11 @@
 <header class="header">
   <h1>User Dashboard</h1>
-  <input type="text" placeholder="Search by ID" />
+  <input
+    type="number"
+    *ngIf="isHomePage()"
+    appPositiveNumber
+    (input)="onSearchKeyChange()"
+    [(ngModel)]="searchKey"
+    placeholder="Search by ID"
+  />
 </header>
