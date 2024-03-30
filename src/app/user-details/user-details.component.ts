@@ -4,7 +4,7 @@ import { takeUntil } from 'rxjs';
 import { ComponentBase } from '../shared/base/common.base';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../shared/service/api.service';
-import { USERDETAILS} from '../shared/models/common.models';
+import { USERDETAILS } from '../shared/models/common.models';
 
 @Component({
   selector: 'app-user-details',
@@ -44,7 +44,6 @@ export class UserDetailsComponent extends ComponentBase implements OnInit {
           this.toastr.success('API call successful!', 'Success');
         },
         (error) => {
-          console.error('API call error:', error);
           this.toastr.error('API call failed!', 'Error');
           this.isLoading = false;
         }

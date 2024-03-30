@@ -30,6 +30,9 @@ export class UserCardsComponent extends ComponentBase implements OnInit {
     this.userDataService.getSearchKey().subscribe((key) => {
       if (key !== null) {
         this.searchKey = key.toString();
+        this.filterUserList();
+      } else {
+        this.userList = this.userDataService.getUserList().value;
       }
     });
 
@@ -49,12 +52,16 @@ export class UserCardsComponent extends ComponentBase implements OnInit {
             this.toastr.success('API call successful!', 'Success');
           },
           (error) => {
-            console.error('API call error:', error);
             this.toastr.error('API call failed!', 'Error');
             this.isLoading = false;
           }
         );
     }
+  }
+  filterUserList() {
+    this.userList = this.userList.filter((user) =>
+      user.id.toString().includes(this.searchKey.toString())
+    );
   }
 
   goToUserDetails(userId: number): void {

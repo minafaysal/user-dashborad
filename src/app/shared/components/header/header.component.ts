@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../service/api.service';
 import { Router } from '@angular/router';
+import { UserDataService } from '../../service/user-data.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,13 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   searchKey: string = '';
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private userDataService: UserDataService,
+    private router: Router
+  ) {}
 
   onSearchKeyChange(): void {
-    this.apiService.setSearchKey(this.searchKey);
+    this.userDataService.setSearchKey(this.searchKey);
   }
   isHomePage(): boolean {
     return this.router.url === '/user-cards';
