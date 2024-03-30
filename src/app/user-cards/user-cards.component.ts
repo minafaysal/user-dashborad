@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs';
 import { ApiService } from '../shared/service/api.service';
-import { USER} from '../shared/models/common.models';
+import { USER } from '../shared/models/common.models';
 import { ComponentBase } from '../shared/base/common.base';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -27,7 +27,7 @@ export class UserCardsComponent extends ComponentBase implements OnInit {
   ngOnInit() {
     this.apiService.getSearchKey().subscribe((key) => {
       if (key !== null) {
-        console.log('Search Key:', key);
+        this.searchKey = key.toString();
       }
     });
 

@@ -7,8 +7,6 @@ import { USER, USERDETAILSDATA, USERSDATA } from '../models/common.models';
   providedIn: 'root',
 })
 export class ApiService {
-  // private searchKeySubject: BehaviorSubject<number | null> =
-  //   new BehaviorSubject<number | null>(null);
   private userListSubject: BehaviorSubject<USER[]> = new BehaviorSubject<
     USER[]
   >([]);
@@ -40,13 +38,6 @@ export class ApiService {
     }
   }
 
-  // setSearchKey(key: number): void {
-  //   this.searchKeySubject.next(key);
-  // }
-
-  // getSearchKey(): BehaviorSubject<number | null> {
-  //   return this.searchKeySubject;
-  // }
   setUserList(userList: USER[]): void {
     this.userListSubject.next(userList);
   }
