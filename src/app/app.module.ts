@@ -13,6 +13,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

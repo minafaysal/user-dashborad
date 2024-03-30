@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 export class UserCardsComponent extends ComponentBase implements OnInit {
   userList: USER[] = [];
   isLoading: boolean = true;
+  searchKey: string = '';
+
   constructor(
     private apiService: ApiService,
     private toastr: ToastrService,
@@ -23,6 +25,12 @@ export class UserCardsComponent extends ComponentBase implements OnInit {
   }
 
   ngOnInit() {
+    this.apiService.getSearchKey().subscribe((key) => {
+      if (key !== null) {
+        console.log('Search Key:', key);
+      }
+    });
+
     this.apiService
       .getUsers()
       .pipe(takeUntil(this.destroy$))
